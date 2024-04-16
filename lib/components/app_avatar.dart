@@ -17,6 +17,8 @@ class AppAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        //Khung tròn avatar
+        //c1: container
         Container(
           width: radius * 2.0,
           height: radius * 2.0,
@@ -25,6 +27,8 @@ class AppAvatar extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: avatar == null
+                  // ? Assets.images.defaultAvatar.provider()
+                  // ? Image.asset(Assets.images.defaultAvatar.path).image
                   ? AssetImage(Assets.images.defaultAvatar.path)
                       as ImageProvider
                   : FileImage(File(avatar!)),
@@ -32,6 +36,18 @@ class AppAvatar extends StatelessWidget {
             ),
           ),
         ),
+        //c2: Bọc CircleAvatar bằng 1 CircleAvatar khác
+
+        //  CircleAvatar(
+        //   backgroundColor: Colors.red,
+        //   radius: radius,
+        //   child: CircleAvatar(
+        //     backgroundImage: avatar == null
+        //         ? AssetImage(Assets.images.defaultAvatar.path)
+        //         : AssetImage(avatar!),
+        //     radius: radius - 1.0,
+        //   ),
+        // ),
         Positioned(
           right: 0.0,
           bottom: 0.0,
