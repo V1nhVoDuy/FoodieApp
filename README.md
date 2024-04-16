@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-# foodie_app
+Ctrl + shift + P -> Dart add dependencies ->
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# FoodieApp
->>>>>>> origin/main
+Các Dependcies sử dụng:
+cupertino_icons: ^1.0.2
+shimmer: ^3.0.0
+build_runner: ^2.4.9
+flutter_gen_runner: ^5.4.0
+flutter_rating_bar: ^4.0.1
+file_picker: ^8.0.0+1
+shared_preferences: ^2.2.3
+Sau khi thêm vào, check pubspec.yaml và nhấn vào icon mũi tên xuống bên trên phải màn hình hoặc chạy lệnh flutter/dart pub get
+Bằng cách này, có thể thêm các dependies version tốt nhất và chạy toàn bộ project, thay vì import trực tiếp trên file.
