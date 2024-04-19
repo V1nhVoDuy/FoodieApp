@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie_app/pages/cart_page.dart';
+import 'package:foodie_app/pages/authen/login_page.dart';
+import 'package:foodie_app/pages/authen/register_page.dart';
 
 import '../components/button/app_elevated_button.dart';
 import '../gen/assets.gen.dart';
@@ -70,19 +71,28 @@ class _WelcomePageState extends State<WelcomePage> {
                         onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
-                                builder: (context) => const CartPage(),
+                                builder: (context) => const LoginPage(),
                               ),
                               (Route<dynamic> route) => false);
                         },
                         text: 'Login'),
                   ),
+                  const SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: AppElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                builder: (context) => const RegisterPage(),
+                              ),
+                              (Route<dynamic> route) => false);
+                        },
+                        text: 'Sign up'),
+                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: AppElevatedButton.outline(text: 'Sign in'),
-                  )
                 ],
               )),
         ],
