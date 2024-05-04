@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../components/app_dialog.dart';
+import '../components/appbar/foodie_app_bar.dart';
 import 'cart/widget/delivery_time.dart';
 import 'cart/widget/food_item.dart';
-import '../components/appBar/foodie_app_bar.dart';
 import '../models/food_model.dart';
 
 class CartPage extends StatefulWidget {
@@ -36,10 +36,6 @@ class _CartPageState extends State<CartPage> {
                 action: () =>
                     SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
               ),
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.brown.withOpacity(0.8),
-          ),
           title: 'Foodies'),
       body: SingleChildScrollView(
         child: Padding(

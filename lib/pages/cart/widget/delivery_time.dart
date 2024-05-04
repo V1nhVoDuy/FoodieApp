@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../components/app_box_shadow.dart';
 import '../../../components/button/app_elevated_button.dart';
+import '../payment/payment_page.dart';
 
 class DeliveryTime extends StatelessWidget {
   const DeliveryTime({
@@ -65,7 +66,12 @@ class DeliveryTime extends StatelessWidget {
               ),
               const Spacer(),
               AppElevatedButton.small(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const PaymentPage()),
+                  ),
+                ),
                 text: 'Place Order',
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),

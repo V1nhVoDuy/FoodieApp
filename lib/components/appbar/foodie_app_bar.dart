@@ -2,31 +2,31 @@ import 'dart:io';
 import 'dart:math' as math;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:foodie_app/components/app_avatar.dart';
 import 'package:shimmer/shimmer.dart';
-
 import '../../pages/services/local/shared_prefs.dart';
+import '../app_avatar.dart';
 
 class FoodieAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const FoodieAppBar({
+  FoodieAppBar({
     super.key,
     this.leftPressed,
     this.color,
-    required this.icon,
+    Icon? icon,
     required this.title,
-  });
+  }) : icon = icon ??
+            Icon(Icons.arrow_back_ios_new,
+                color: Colors.brown.withOpacity(0.8));
 
   final Function()? leftPressed;
   final Color? color;
-  final Icon icon;
+  final Icon? icon;
   final String title;
 
   @override
   State<FoodieAppBar> createState() => _FoodieAppBarState();
 
   @override
-  Size get preferredSize =>
-      const Size.fromHeight(86.0); //tra ve chieu cao appbar
+  Size get preferredSize => const Size.fromHeight(86.0);
 }
 
 class _FoodieAppBarState extends State<FoodieAppBar> {
@@ -71,7 +71,7 @@ class _FoodieAppBarState extends State<FoodieAppBar> {
           GestureDetector(
             onTap: widget.leftPressed,
             child: Transform.rotate(
-              angle: 45 * math.pi / 180, //xoay container
+              angle: 45 * math.pi / 180,
               child: Container(
                 padding: const EdgeInsets.all(6.8),
                 decoration: const BoxDecoration(
@@ -86,8 +86,7 @@ class _FoodieAppBarState extends State<FoodieAppBar> {
                   ],
                 ),
                 child: Transform.rotate(
-                    angle: -45 * math.pi / 180,
-                    child: widget.icon), //xoay icon theo goc nguoc lai
+                    angle: -45 * math.pi / 180, child: widget.icon),
               ),
             ),
           ),
@@ -98,7 +97,7 @@ class _FoodieAppBarState extends State<FoodieAppBar> {
               widget.title,
               style: const TextStyle(
                 color: Colors.red,
-                fontSize: 22.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500,
               ),
             ),
